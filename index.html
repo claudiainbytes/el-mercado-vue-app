@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>El Mercado</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="style.css" rel="stylesheet" type="text/css"/>
+  <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+</head>
+<body>
+  <div class="container" id="app">
+  <div class="row">
+  <div class="col-12">  
+    <div class="titulo">
+            <h1>El Mercado</h1><img src="logo.png"/>  
+    </div> 
+    <div class="clearfix"></div>
+    <p class="text-left">Escribe que necesitas</p>     
+  <form class="form-inline">
+  <div class="form-group">  
+  <input type="text" class="form-control" v-model="articulo">
+  <input type="button" class="btn btn-primary" value="Agregar a lista" @click="anadirArticulo(articulo)">
+  </div>
+  </form> 
+  <hr>  
+  <p v-if="listaCompras.length <= 0">La lista de compras esta vacía.</p>
+  <ul class="list-unstyled" v-for="(articulo, index) in listaCompras">
+    <li>{{articulo.articulo}} 
+    <input type="button" class="btn btn-danger btn-xs" value="Borrar" @click="borrarArticulo( articulo, index)">
+  </li>
+  </ul>
+  <hr>  
+  <p v-if="listaCompras.length > 0">Total de elementos a comprar: {{listaCompras.length }}</p>  
+  <!--pre>{{ $data }}</pre-->
+  </div>  
+  </div>
+  </div>
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

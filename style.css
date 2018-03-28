@@ -1,0 +1,17 @@
+body {
+    background-image: url("https://www.transparenttextures.com/patterns/ag-square.png");
+}
+.titulo {
+    width: 100%;
+}
+
+.titulo img {
+    max-width: 50px;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.titulo h1 {
+    position: relative;
+    float: left;
+}
